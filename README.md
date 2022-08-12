@@ -1,4 +1,23 @@
 # Java
+
+- OpenJDK - VM to translate source code to bytecode that can run machine code on CPU
+- Static Java - produces a statically compiled native executable targeting fast startup
+- Native Java - ahead-of-time compiles to machine code directly without JIT
+  - GraalVM Native Image - ahead-of-time compiler (AOT)
+    - Quarkus - Native Java support on Kubernetes
+optimizing Java specifically for containers and enabling it to become an effective platform for serverless, cloud, and Kubernetes environments
+    - Micronaut framework - building Cloud Native Java microservices using GraalVM
+    - Helidon
+  - Java Native Interface (JNI) library - invoke a library through JNI to use GPU
+- TornadoVM - JIT compiler and runtime to run for GPU
+- VM options
+  - `-Xmx1024M`
+  - `-Xms5g`
+  - `-Xmx6g`
+- lombok - editor plugin for declarative getter/setter
+
+### Code
+
 - wildcard generics
   - `ArrayList<? extends Number>` allows any object that extends Number to fill the ArrayList
   - `ArrayList<? super Integer>` allows any object that is the super class of `Integer` i.e. `Number` or `Object`
