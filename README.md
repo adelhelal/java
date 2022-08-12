@@ -1,5 +1,10 @@
 # Java
 
+- JDK - Java Development Kit
+- JRE - Java Runtime Environment - Java VM, libraries
+- JEP - JDK Enhancement Proposal - drafted process for release roadmap
+
+
 - OpenJDK - VM to translate source code to bytecode that can run machine code on CPU
 - Static Java - produces a statically compiled native executable targeting fast startup
 - Native Java - ahead-of-time compiles to machine code directly without JIT
