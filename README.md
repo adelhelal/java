@@ -14,7 +14,13 @@ optimizing Java specifically for containers and enabling it to become an effecti
   - `-Xmx1024M`
   - `-Xms5g`
   - `-Xmx6g`
-- lombok - editor plugin for declarative getter/setter
+- 3rd party libraries
+  - lombok - editor plugin for declarative getter/setter
+- Garbage collection
+  - G1 - default since Java 11
+  - Serial GC
+  - ZGC
+  - Shenandoah
 
 ### Code
 
