@@ -8,6 +8,7 @@
 optimizing Java specifically for containers and enabling it to become an effective platform for serverless, cloud, and Kubernetes environments
     - Micronaut framework - building Cloud Native Java microservices using GraalVM
     - Helidon
+    - configuration repository- dynamic features like reflection and proxies need "reachability metadata" to help Native Image discover at runtime 
   - Java Native Interface (JNI) library - invoke a library through JNI to use GPU
 - TornadoVM - JIT compiler and runtime to run for GPU
 - VM options
