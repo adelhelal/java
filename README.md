@@ -16,7 +16,7 @@ optimizing Java specifically for containers and enabling it to become an effecti
     - Helidon - cloud-native, open source set of Java libraries for writing microservices
     - configuration repository - dynamic features like reflection and proxies need "reachability metadata" to help Native Image discover at runtime 
   - Java Native Interface (JNI) library - invoke a library through JNI to use GPU
-- TornadoVM - JIT compiler and runtime to run for GPU
+- TornadoVM - JIT compiler and runtime to run for GPU - parallel programming framework
 - VM options
   - `-Xmx1024M`
   - `-Xms5g`
