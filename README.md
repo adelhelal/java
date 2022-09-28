@@ -5,6 +5,8 @@
 - JEP - JDK Enhancement Proposal - drafted process for release roadmap
 - OpenJDK - VM to translate source code to bytecode that can run machine code on CPU
 
+* Jakarta EE - specifications extending Java SE for enterprise features e.g. distributed computing, web services
+
 ### Features
 
 - Static Java - produces a statically compiled native executable targeting fast startup
