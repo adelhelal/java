@@ -54,3 +54,13 @@ synchronized (mutex) {
 ```
 - data-oriented
   - Records, sealed interfaces, pattern matching
+
+# Scala
+
+- `trait` - interface
+- `object` - singleton of `class`
+- Optionless extractors - ???
+- type lambdas - ???
+- type level compiler - ???
+- intrinsic - ???
+- polymorphic functions - ???
