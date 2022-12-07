@@ -56,6 +56,21 @@ synchronized (mutex) {
 - data-oriented
   - Records, sealed interfaces, pattern matching
 
+### Libraries
+
+- Resilience4j - fault tolerance library designed for functional programming
+```java
+Decorators.ofSupplier(supplier)
+    .withThreadPoolBulkhead(threadPoolBulkhead)
+    .withTimeLimiter(timeLimiter, scheduledExecutorService)
+    .withCircuitBreaker(circuitBreaker)
+    .withFallback(asList(TimeoutException.class, 
+      CallNotPermittedException.class, 
+      BulkheadFullException.class),  
+      throwable -> "Hello from Recovery")
+    .get()
+```
+
 # Scala
 
 - `trait` - interface
