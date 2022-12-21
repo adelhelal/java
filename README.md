@@ -7,6 +7,7 @@
 - OpenJDK - VM to translate source code to bytecode that can run machine code on CPU
 
 * Jakarta EE - specifications extending Java SE for enterprise features e.g. distributed computing, web services
+  * Payara Cloud - “serverless” runtime that runs and scales Jakarta EE applications
 
 ### Features
 
