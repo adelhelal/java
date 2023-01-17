@@ -15,7 +15,7 @@
 - Native Java - ahead-of-time compiles to machine code directly without JIT
   - GraalVM Native Image - ahead-of-time compiler (AOT)
     - Quarkus - Native Java support on Kubernetes
-optimizing Java specifically for containers and enabling it to become an effective platform for serverless, cloud, and Kubernetes environments
+      - optimizing Java specifically for containers and enabling it to become an effective platform for serverless, cloud, and Kubernetes environments
     - Micronaut framework - building cloud-native Java microservices using GraalVM
     - Helidon - cloud-native, open source set of Java libraries for writing microservices
       - Helidon Níma - microservices framework based on virtual threads
