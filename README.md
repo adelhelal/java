@@ -24,9 +24,10 @@
 - TornadoVM - JIT compiler and runtime to run for GPU - parallel programming framework
 - VM options
   - -X (extra options)
-    - `-Xmx1024M`
-    - `-Xms5g`
-    - `-Xmx6g`
+    - `-Dfoo="bar"` (sets a system property=value)
+    - `-Xms4g` (minimum and initial size in bytes of the heap)
+    - `-Xmn5g` (initial and maximum size in bytes of the heap)
+    - `-Xmx6g` (maximum size in bytes of the heap)
 - 3rd party libraries
   - lombok - editor plugin for declarative getter/setter
 - Garbage collection
