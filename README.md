@@ -23,9 +23,10 @@
   - Java Native Interface (JNI) library - invoke a library through JNI to use GPU
 - TornadoVM - JIT compiler and runtime to run for GPU - parallel programming framework
 - VM options
-  - `-Xmx1024M`
-  - `-Xms5g`
-  - `-Xmx6g`
+  - -X (extra options)
+    - `-Xmx1024M`
+    - `-Xms5g`
+    - `-Xmx6g`
 - 3rd party libraries
   - lombok - editor plugin for declarative getter/setter
 - Garbage collection
