@@ -64,14 +64,22 @@ synchronized (mutex) {
 - Resilience4j - fault tolerance library designed for functional programming
 ```java
 Decorators.ofSupplier(supplier)
-    .withThreadPoolBulkhead(threadPoolBulkhead)
-    .withTimeLimiter(timeLimiter, scheduledExecutorService)
-    .withCircuitBreaker(circuitBreaker)
-    .withFallback(asList(TimeoutException.class, 
-      CallNotPermittedException.class, 
-      BulkheadFullException.class),  
-      throwable -> "Hello from Recovery")
-    .get()
+  .withThreadPoolBulkhead(threadPoolBulkhead)
+  .withTimeLimiter(timeLimiter, scheduledExecutorService)
+  .withCircuitBreaker(circuitBreaker)
+  .withFallback(asList(TimeoutException.class, 
+    CallNotPermittedException.class, 
+    BulkheadFullException.class),  
+    throwable -> "Hello from Recovery")
+  .get()
+```
+
+- JobRunr - Java Scheduler Library
+```java
+jobScheduler.create(aJob()
+  .withName("My Scheduled Job")
+  .scheduleAt(Instant.parse(scheduleAt))
+  .withDetails(() -> service.doWork()));
 ```
 
 # Scala
