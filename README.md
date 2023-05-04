@@ -5,6 +5,13 @@
 - JEP - JDK Enhancement Proposal - drafted process for release roadmap
 - JCP - Java Community Process
 - OpenJDK - VM to translate source code to bytecode that can run machine code on CPU
+- Web API
+  - JAX-RS - Java API for RESTful Web Services
+  - Springboot
+    - RESTTemplate - synchronous
+    - HttpServlet - Servlet Stack - synchronous
+    - Reactive Stack - reactive, asynchronous, non-blocking
+      - WebClient - Spring Web Reactive (spring-webflux)
 
 * Jakarta EE - specifications extending Java SE for enterprise features e.g. distributed computing, web services
   * Payara Cloud - “serverless” runtime that runs and scales Jakarta EE applications
@@ -38,6 +45,18 @@
 
 ### Code
 
+- Java String Pool
+  - Java heap has a special memory allocation for strings.
+  - The same character array has the same reference for any variable created with the same string.
+```java
+string a = "Adel Helal"; 
+string b = "Adel Helal"; 
+assertTrue(first == second);
+
+string a = "Adel Helal";
+string b = new String("Adel Helal");
+assertThat(a).isNotSameAs(b);
+```
 - wildcard generics
   - `ArrayList<? extends Number>` allows any object that extends Number to fill the ArrayList
   - `ArrayList<? super Integer>` allows any object that is the super class of `Integer` i.e. `Number` or `Object`
@@ -56,8 +75,15 @@ synchronized (mutex) {
   // do stuff
 }
 ```
+- sealed class
+```java
+public final class Customer {
+}
+```
 - data-oriented
-  - Records, sealed interfaces, pattern matching
+  - records (immutable objects)
+  - sealed interfaces
+  - pattern matching
 
 ### Libraries
 
