@@ -33,7 +33,7 @@
   - -X (extra options)
     - `-Dfoo="bar"` (sets a system property=value)
     - `-Xms4g` (minimum and initial size in bytes of the heap)
-    - `-Xmn5g` (initial and maximum size in bytes of the heap)
+    - `-Xmn5g` (maximum and initial size in bytes of the heap)
     - `-Xmx6g` (maximum size in bytes of the heap)
 - 3rd party libraries
   - lombok - editor plugin for declarative getter/setter
