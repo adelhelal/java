@@ -1,4 +1,4 @@
-package com.macquarie.cgm.de.services;
+package com.sample.services;
 
 import com.solacesystems.jms.SupportedProperty;
 import org.json.simple.JSONObject;
