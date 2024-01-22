@@ -26,9 +26,9 @@ public class JMSPublisher {
         // Setting up and Initial Context Lookup Details
         Hashtable<String, Object> env = new Hashtable<>();
         env.put(InitialContext.INITIAL_CONTEXT_FACTORY, "com.solacesystems.jndi.SolJNDIInitialContextFactory");
-        env.put(InitialContext.PROVIDER_URL, "smfs://solcfmaudev-primary.macbank:55443");
-        env.put(SupportedProperty.SOLACE_JMS_VPN, "sol-cfm-au-dev");
-        env.put(Context.SECURITY_PRINCIPAL, "sol_fts_au_dv");
+        env.put(InitialContext.PROVIDER_URL, "smfs://solace.url:44444");
+        env.put(SupportedProperty.SOLACE_JMS_VPN, "sol-jms-vpn");
+        env.put(Context.SECURITY_PRINCIPAL, "sol-security-principal");
         env.put(Context.SECURITY_CREDENTIALS, credentialService.GetCredentials("SOLACE_SECURITY_CREDENTIALS"));
 
         // Properties for SSL Session
@@ -41,7 +41,7 @@ public class JMSPublisher {
         // InitialContext is used to look up the JMS administered objects
         InitialContext initialContext = new InitialContext(env);
         // Lookup ConnectionFactory
-        ConnectionFactory connectionfactory = (ConnectionFactory)initialContext.lookup("sol_fts_au_dv");
+        ConnectionFactory connectionfactory = (ConnectionFactory)initialContext.lookup("sol_cnn");
         // JMS Connection
         Connection connection = connectionfactory.createConnection();
 
@@ -49,7 +49,7 @@ public class JMSPublisher {
         final Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
         // Lookup Topic in Solace JNDI
-        final Topic topic = (Topic)initialContext.lookup("marx_test_celer_orders_topic"); // felix_trading_order_otc_topic
+        final Topic topic = (Topic)initialContext.lookup("sol_topic");
 
         // Create a Producer Session
         final MessageProducer producer = session.createProducer(topic);
@@ -57,9 +57,9 @@ public class JMSPublisher {
         try {
             for(int i = 0; i <= 1000; i +=3) {
                 for (String fileName : new String[]{
-                        "src/main/resources/samples/CELER_ORDER_ROUTING_TRADE_001.json",
-                        "src/main/resources/samples/CELER_ORDER_ROUTING_TRADE_002.json",
-                        "src/main/resources/samples/CELER_ORDER_ROUTING_TRADE_003.json"
+                        "src/main/resources/samples/json_001.json",
+                        "src/main/resources/samples/json_002.json",
+                        "src/main/resources/samples/json_003.json"
                 }) {
                     try (var reader = new FileReader(fileName)) {
                         var json = (JSONObject) (new JSONParser().parse(reader));
@@ -80,7 +80,7 @@ public class JMSPublisher {
         } catch (javax.jms.JMSException e) {
             System.out.println(e.getMessage());
         } finally {
-            System.out.println("Closing resources... ");
+            System.out.println("Closing resources...");
 
             if (producer != null ) {
                 producer.close();
